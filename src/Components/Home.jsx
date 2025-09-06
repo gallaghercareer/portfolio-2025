@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -16,44 +16,47 @@ import video2 from '../media/video2.mp4'
 import cardImage_Sun from '../media/sun.jpg'
 import cardImage_Bullseye from '../media/bullseye.jpg'
 import cardImage_Shoppingcart from '../media/shoppingcart.jpg'
-import {CardActionArea} from '@mui/material'
+import { CardActionArea } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 const theme = createTheme();
 
 
 
-export default function Home() {
+export default function Home()
+{
 
   let navigate = useNavigate()
   const [autoPlay, setAutoPlay] = useState(false)
-  
-  
-  useEffect(()=>{
 
-   if(window.innerWidth >= 1200){
-    setAutoPlay(true)
-  }
+
+  useEffect(() =>
+  {
+
+    if (window.innerWidth >= 1200)
+    {
+      setAutoPlay(true)
+    }
   }, []);
 
-  return ( 
+  return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box id="home"></Box>
       {/*Video banner*/}
-      <Box position='relative'  sx={{display: {xs:'none',  lg:'block'}}}>
-       
+      <Box position='relative' sx={{ display: { xs: 'none', lg: 'block' } }}>
+
         {autoPlay ?
           <Card>
-          <CardMedia component='video' autoPlay src={video2}  muted loop sx={{ display: 'in-line', zIndex: -1}}>
-          </CardMedia>
-          </Card> : 
-          
+            <CardMedia component='video' autoPlay src={video2} muted loop sx={{ display: 'in-line', zIndex: -1 }}>
+            </CardMedia>
+          </Card> :
+
           <Card>
-          <CardMedia component='video' src={video2}  muted loop sx={{ display: 'in-line', zIndex: -1}}>
-          </CardMedia>
-          </Card>  } 
-    
+            <CardMedia component='video' src={video2} muted loop sx={{ display: 'in-line', zIndex: -1 }}>
+            </CardMedia>
+          </Card>}
+
 
         <Box sx={{
           position: 'absolute',
@@ -61,7 +64,7 @@ export default function Home() {
           top: 100,
           left: '50%',
           transform: 'translateX(-50%)'
-        
+
         }}>
           <Typography sx={{ typography: { sm: 'h6', md: 'h2', lg: 'h1' }, h1: { "fontWeight": 400 }, h2: { "fontWeight": 400 }, h3: { "fontWeight": 400 } }}>I build wonderful exeriences for the <Typography component="div" sx={{ typography: { xs: 'h5', md: 'h3', lg: 'h1' }, fontWeight: 450, color: '#237FFF' }}>web</Typography></Typography>
 
@@ -70,13 +73,11 @@ export default function Home() {
         <Box sx={{
           position: 'absolute',
           color: 'white',
-          top: 600,
+          top: { xs: 300, sm: 400, md: 600 },
           left: '75%',
           transform: 'translateX(-50%)'
-
         }}>
-
-          <Button sx={{ display: { xs: "none", sm: "none", md: "none", lg: "block" } }} href="#portfolio" variant="contained" >
+          <Button sx={{ display: { xs: "none", sm: "none", md: "none", lg: "block" } }} href="#portfolio" variant="contained">
             <Typography variant='h4' align="center" sx={{ width: 300, padding: 3, fontWeight: 450 }}>Portfolio</Typography>
           </Button>
         </Box>
@@ -129,20 +130,20 @@ export default function Home() {
               sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
             >
               <CardActionArea component={Link} to="/shoppingcart">
-              <CardMedia
-                component="img"
-                sx={{
-                  pt: 10
-                }}
-                height="300"
-                image={cardImage_Shoppingcart}
-                alt="random"
-                
-              />
-               </CardActionArea>
+                <CardMedia
+                  component="img"
+                  sx={{
+                    pt: 10
+                  }}
+                  height="300"
+                  image={cardImage_Shoppingcart}
+                  alt="random"
+
+                />
+              </CardActionArea>
               <CardContent sx={{ flexGrow: 1 }}>
                 <Typography gutterBottom variant="h5" component="h2">
-                  Shopping Cart 
+                  Shopping Cart
                 </Typography>
                 <Typography>
                   Context API---Props--Lists---Advanced Functions--Conditional Rendering
@@ -150,58 +151,58 @@ export default function Home() {
               </CardContent>
               <CardActions>
                 <Button size="small" onClick={() => { navigate('/shoppingcart/#shopheader') }}>View</Button>
-                <Button size="small"onClick={() => { window.open('https://github.com/gallaghercareer/portfolio-2022/blob/main/src/Components/ShoppingCart.jsx') }}>GitHub</Button>
+                <Button size="small" onClick={() => { window.open('https://github.com/gallaghercareer/portfolio-2022/blob/main/src/Components/ShoppingCart.jsx') }}>GitHub</Button>
               </CardActions>
             </Card>
           </Grid>
           <Grid item xs={12} sm={12} md={12} lg={4}>
 
             {/* CARD 2 */}
-             <Card
-                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                >
-                                <CardActionArea component={Link} to="/login">
-
-                  <CardMedia
-                    component="img"
-                    sx={{
-                     pt:10
-                    }}
-                    height="300"
-                    image={cardImage_Bullseye}
-                    alt="random"
-                  />
-                   </CardActionArea>
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                     C#/.NET Ticketing Application
-                    </Typography>
-                    <Typography>
-                      Full Stack Project--Azure Deployed, ASP.NET MVC Application
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                  <Button size="small" onClick={() => { window.open('https://finalprorere20250306153225-gnhzdjhbawbfgaaq.canadacentral-01.azurewebsites.net') }}>View</Button>
-                  <Button size="small" onClick={() => { window.open('https://github.com/gallaghercareer/2022-NETMVC-App') }}>GitHub</Button>
-                  </CardActions> 
-                </Card>
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={4}>
-            
-                        {/* CARD 3 */}
             <Card
               sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
             >
-               <CardActionArea component={Link} to="/weather">  
-              <CardMedia
-                component="img"
-                sx={{
-                  pt: 10
-                }}
-                height="300"
-                image={cardImage_Sun}
-                alt="random"
-              />
+              <CardActionArea component={Link} to="/login">
+
+                <CardMedia
+                  component="img"
+                  sx={{
+                    pt: 10
+                  }}
+                  height="300"
+                  image={cardImage_Bullseye}
+                  alt="random"
+                />
+              </CardActionArea>
+              <CardContent sx={{ flexGrow: 1 }}>
+                <Typography gutterBottom variant="h5" component="h2">
+                  C#/.NET Ticketing Application
+                </Typography>
+                <Typography>
+                  Full Stack Project--Azure Deployed, ASP.NET MVC Application
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small" onClick={() => { window.open('dnetframeworkbugtracker-f6budjaxdbaqgnf7.canadacentral-01.azurewebsites.net') }}>View</Button>
+                <Button size="small" onClick={() => { window.open('https://github.com/gallaghercareer/2022-NETMVC-App') }}>GitHub</Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item xs={12} sm={12} md={12} lg={4}>
+
+            {/* CARD 3 */}
+            <Card
+              sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+            >
+              <CardActionArea component={Link} to="/weather">
+                <CardMedia
+                  component="img"
+                  sx={{
+                    pt: 10
+                  }}
+                  height="300"
+                  image={cardImage_Sun}
+                  alt="random"
+                />
               </CardActionArea>
               <CardContent sx={{ flexGrow: 1 }}>
                 <Typography gutterBottom variant="h5" component="h2">
