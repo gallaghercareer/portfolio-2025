@@ -182,7 +182,7 @@ export default function Home()
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" onClick={() => { window.open('dnetframeworkbugtracker-f6budjaxdbaqgnf7.canadacentral-01.azurewebsites.net') }}>View</Button>
+                <Button size="small" onClick={() => { window.open('https://dnetframeworkbugtracker-f6budjaxdbaqgnf7.canadacentral-01.azurewebsites.net', '_blank') }}>View</Button>
                 <Button size="small" onClick={() => { window.open('https://github.com/gallaghercareer/2022-NETMVC-App') }}>GitHub</Button>
               </CardActions>
             </Card>
