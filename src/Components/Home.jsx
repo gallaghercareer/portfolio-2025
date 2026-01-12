@@ -143,15 +143,15 @@ export default function Home()
               </CardActionArea>
               <CardContent sx={{ flexGrow: 1 }}>
                 <Typography gutterBottom variant="h5" component="h2">
-                  Shopping Cart
+                  Recipe Maker App
                 </Typography>
                 <Typography>
-                  Context API---Props--Lists---Advanced Functions--Conditional Rendering
+                  Serverless Architecture ---Azure Authentication--Typescript React Front-End --- C# Azure Functions --NoSQL database
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" onClick={() => { navigate('/shoppingcart/#shopheader') }}>View</Button>
-                <Button size="small" onClick={() => { window.open('https://github.com/gallaghercareer/portfolio-2022/blob/main/src/Components/ShoppingCart.jsx') }}>GitHub</Button>
+                <Button size="small" onClick={() => { window.open('https://icy-dune-0439bf00f.6.azurestaticapps.net/') }}>View</Button>
+                <Button size="small" onClick={() => { window.open('https://github.com/gallaghercareer/recipemaker-ts') }}>GitHub</Button>
               </CardActions>
             </Card>
           </Grid>
@@ -178,12 +178,12 @@ export default function Home()
                   C#/.NET Ticketing Application
                 </Typography>
                 <Typography>
-                  Full Stack Project--Azure Deployed, ASP.NET MVC Application
+                  Full Stack Project--Azure App Service, Azure SQL Database,  ASP.NET MVC Application, Identity Library Authentication
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" onClick={() => { window.open('https://dnetframeworkbugtracker-f6budjaxdbaqgnf7.canadacentral-01.azurewebsites.net', '_blank') }}>View</Button>
-                <Button size="small" onClick={() => { window.open('https://github.com/gallaghercareer/2022-NETMVC-App') }}>GitHub</Button>
+                <Button size="small" onClick={() => { window.open('https://bugtracker-e2ecatdjfhaqbccz.canadacentral-01.azurewebsites.net', '_blank') }}>View</Button>
+                <Button size="small" onClick={() => { window.open('https://github.com/gallaghercareer/BugTracker2025') }}>GitHub</Button>
               </CardActions>
             </Card>
           </Grid>
