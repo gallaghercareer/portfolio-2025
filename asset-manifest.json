@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/portfolio-2025/static/js/main.baf36012.js",
+    "main.js": "/portfolio-2025/static/js/main.c1a09382.js",
     "static/media/video2.mp4": "/portfolio-2025/static/media/video2.7ee6849440df24fa845b.mp4",
     "static/media/shoppingcart.jpg": "/portfolio-2025/static/media/shoppingcart.869fab2ea21d34540edb.jpg",
     "static/media/foodImage.jpg": "/portfolio-2025/static/media/foodImage.87889735cd0e421039fd.jpg",
@@ -12,9 +12,9 @@
     "static/media/sun.jpg": "/portfolio-2025/static/media/sun.eb109f549352518649ab.jpg",
     "static/media/mango.jpg": "/portfolio-2025/static/media/mango.6231b29fd0ec576fd1ea.jpg",
     "index.html": "/portfolio-2025/index.html",
-    "main.baf36012.js.map": "/portfolio-2025/static/js/main.baf36012.js.map"
+    "main.c1a09382.js.map": "/portfolio-2025/static/js/main.c1a09382.js.map"
   },
   "entrypoints": [
-    "static/js/main.baf36012.js"
+    "static/js/main.c1a09382.js"
   ]
 }
