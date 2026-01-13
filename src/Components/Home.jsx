@@ -129,7 +129,7 @@ export default function Home()
             <Card
               sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
             >
-              <CardActionArea component={Link} to="/shoppingcart">
+              <CardActionArea component="a" href="https://icy-dune-0439bf00f.6.azurestaticapps.net/" target="_blank" rel="noopener noreferrer">
                 <CardMedia
                   component="img"
                   sx={{
@@ -161,7 +161,7 @@ export default function Home()
             <Card
               sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
             >
-              <CardActionArea component={Link} to="/login">
+              <CardActionArea component="a" href="https://bugtracker-e2ecatdjfhaqbccz.canadacentral-01.azurewebsites.net/" target="_blank" rel="noopener noreferrer">
 
                 <CardMedia
                   component="img"
