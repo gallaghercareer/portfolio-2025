@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(frontend-design)",
+      "mcp__context7__resolve-library-id",
+      "Bash(npm start)"
+    ]
+  }
+}
