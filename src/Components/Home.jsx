@@ -43,6 +43,7 @@ const projects = [
     githubUrl: 'https://github.com/gallaghercareer/BugTracker2025',
     isExternal: true,
   },
+  /*
   {
     title: 'Weather App',
     image: cardImage_Sun,
@@ -51,6 +52,7 @@ const projects = [
     githubUrl: 'https://github.com/gallaghercareer/portfolio-2022/blob/main/src/Components/Weather.jsx',
     isExternal: false,
   },
+  */
 ];
 
 // Keyframes for animations
@@ -161,57 +163,7 @@ export default function Home() {
               ...fadeInUpKeyframes,
             }}
           >
-            <TextField
-              fullWidth
-              placeholder="Ask me about my experience..."
-              variant="outlined"
-              InputProps={{
-                readOnly: false,
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton
-                      component={HashLink}
-                      smooth
-                      to="#portfolio"
-                      edge="end"
-                      sx={{
-                        bgcolor: 'primary.main',
-                        color: 'white',
-                        width: 48,
-                        height: 48,
-                        mr: -1,
-                        borderRadius: 2,
-                        '&:hover': {
-                          bgcolor: 'primary.light',
-                        },
-                      }}
-                    >
-                      <ArrowForwardIcon />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-                sx: {
-                  bgcolor: 'rgba(18, 18, 24, 0.6)',
-                  borderRadius: 2,
-                  pr: 1.5,
-                  '& .MuiOutlinedInput-notchedOutline': {
-                    borderColor: 'rgba(139, 92, 246, 0.3)',
-                  },
-                  '&:hover .MuiOutlinedInput-notchedOutline': {
-                    borderColor: 'rgba(139, 92, 246, 0.5)',
-                  },
-                  '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                    borderColor: 'primary.main',
-                  },
-                  '& input': {
-                    color: '#9ca3af',
-                    py: { xs: 2.5, md: 2 },
-                    fontSize: { xs: '1rem', md: '1.1rem' },
-                  },
-                },
-              }}
-              sx={{ mb: 2 }}
-            />
+
 
             <Stack
               direction={{ xs: 'column', sm: 'row' }}
