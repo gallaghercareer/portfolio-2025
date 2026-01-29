@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resume>
+  <personal_information>
+    <name>John Gallagher</name>
+    <contact>
+      <email>gallaghercareer@gmail.com</email>
+      <phone>443-496-2628</phone>
+      <portfolio>https://gallaghercareer.github.io/portfolio-2025/</portfolio>
+      <linkedin>https://www.linkedin.com/in/johngallagher00/</linkedin>
+    </contact>
+  </personal_information>
+
+  <professional_summary>
+    <description>
+      Accomplished Software Engineer with five years of experience contributing to the success of government software systems. Confident in ability to effectively develop C#/.NET applications, manage deployment pipelines, and collaborate with multiple teams to deliver success.
+    </description>
+  </professional_summary>
+
+  <technical_skills>
+    <skill category="programming_languages">
+      <name>C#/.NET</name>
+    </skill>
+    <skill category="databases">
+      <name>Microsoft SQL Server/Entity Framework</name>
+    </skill>
+    <skill category="frontend">
+      <name>React</name>
+      <name>JQuery</name>
+      <name>Bootstrap</name>
+      <name>HTML</name>
+      <name>CSS</name>
+    </skill>
+    <skill category="cloud_platforms">
+      <name>Azure</name>
+      <name>AWS</name>
+    </skill>
+    <skill category="scripting">
+      <name>PowerShell</name>
+    </skill>
+    <skill category="apis">
+      <name>REST</name>
+      <name>SOAP</name>
+    </skill>
+    <skill category="version_control">
+      <name>GitHub</name>
+      <name>Git</name>
+    </skill>
+  </technical_skills>
+
+  <work_experience>
+    <position>
+      <title>Software Developer</title>
+      <employer>US Census Bureau</employer>
+      <location>Suitland, MD</location>
+      <start_date>2020-01</start_date>
+      <end_date>2024-10</end_date>
+      <responsibilities>
+        <category name="C#/.NET Development">
+          <item>Programmed a C# .NET Framework WinForms tool that interacted with Census surveys. The project involved updating user interfaces, consumption of endpoints for data retrieval, and creating C# DLL file packaging and deployment scripts</item>
+          <item>Extended survey platforms by building C# APIs and managing SQL queries that expose legacy data/logic to modern Census applications</item>
+          <item>Programmed in the Census survey language for multiple Census surveys critical to the Bureau of Labor Statistics (BLS) such as the Current Population Survey (CPS) and the American Housing Survey (AHS)</item>
+        </category>
+        <category name="PowerShell">
+          <item>Developed a PowerShell tool to improve code review times. The tool queried the GitHub API for data that was then used to calculate the time it took for pull requests to be approved and merged, normalized by weekly averages. The data was used to provide metrics for helping determine normal pull request timeframes</item>
+          <item>Developed a GUI tool to stream cursor coordinates for Census applications for testing purposes</item>
+          <item>Developed an extensive PowerShell-based VSCode tool to allow for the use of the newer Microsoft VSCode IDE while developing Census codebases</item>
+        </category>
+        <category name="GitHub/Git">
+          <item>Participated in code reviews with other developers to ensure best coding practices</item>
+          <item>Developed git hook scripts in bash to check commits for code quality standards</item>
+          <item>Resolved many git merge issues with teams of up to 7, skilled in the use of git CLI and understanding of the investigative/plumbing commands in git</item>
+        </category>
+        <category name="Testing">
+          <item>Worked alongside QA testers to ensure that products meet design specification requests</item>
+          <item>Participated in unit testing, integration testing, and end-to-end testing for Census systems</item>
+        </category>
+        <category name="Documentation">
+          <item>Authored research-based documentation for software processes and application architecture in enterprise-level government applications using DocFx</item>
+          <item>Engaged in best practices of code documentation such as: git commit comments, code comments, and code-as-documentation</item>
+        </category>
+      </responsibilities>
+    </position>
+
+    <position>
+      <title>PHP Developer</title>
+      <employer>GNET</employer>
+      <location>Salisbury, MD</location>
+      <start_date>2019-08</start_date>
+      <end_date>2020-10</end_date>
+      <responsibilities>
+        <item>Programmed web applications using PHP, MySQL, jQuery, HTML/CSS for multiple clients</item>
+        <item>Participated in QA testing of code</item>
+        <item>Used JetBrains PHPStorm IDE</item>
+        <item>Worked in Linux CentOS system</item>
+      </responsibilities>
+    </position>
+
+    <position>
+      <title>IT Help Desk</title>
+      <employer>Chesapeake College</employer>
+      <location>Wye Mills, MD</location>
+      <start_date>2019-07</start_date>
+      <end_date>2019-08</end_date>
+      <responsibilities>
+        <item>Assisted in IT-related maintenance of computer systems</item>
+        <item>Boot and configured Operating System images to various devices</item>
+        <item>Configure and deploy network hardware/software at Chesapeake College</item>
+      </responsibilities>
+    </position>
+
+    <posi

@@ -163,10 +163,10 @@ export default function Home() {
           >
             <TextField
               fullWidth
-              placeholder="Let's build something amazing"
+              placeholder="Ask me about my experience..."
               variant="outlined"
               InputProps={{
-                readOnly: true,
+                readOnly: false,
                 endAdornment: (
                   <InputAdornment position="end">
                     <IconButton
