@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
@@ -11,13 +10,20 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Chip from '@mui/material/Chip';
 import IconButton from '@mui/material/IconButton';
+import Paper from '@mui/material/Paper';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import video2 from '../media/video2.mp4';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import DescriptionIcon from '@mui/icons-material/Description';
+import CodeIcon from '@mui/icons-material/Code';
 import cardImage_Sun from '../media/sun.jpg';
 import cardImage_Bullseye from '../media/bullseye.jpg';
 import cardImage_Shoppingcart from '../media/shoppingcart.jpg';
 import { useNavigate } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import LottieBackground from './LottieBackground';
 
 // Project data for cleaner card rendering
 const projects = [
@@ -57,13 +63,6 @@ const fadeInUpKeyframes = {
 
 export default function Home() {
   let navigate = useNavigate();
-  const [autoPlay, setAutoPlay] = useState(false);
-
-  useEffect(() => {
-    if (window.innerWidth >= 1200) {
-      setAutoPlay(true);
-    }
-  }, []);
 
   const handleViewProject = (project) => {
     if (project.isExternal) {
@@ -78,181 +77,207 @@ export default function Home() {
       <CssBaseline />
       <Box id="home" />
 
-      {/* Video Banner Section */}
-      <Box position="relative" sx={{ display: { xs: 'none', lg: 'block' } }}>
-        {autoPlay ? (
-          <Card sx={{ borderRadius: 0 }}>
-            <CardMedia
-              component="video"
-              autoPlay
-              src={video2}
-              muted
-              loop
-              sx={{ display: 'block', zIndex: -1 }}
-            />
-          </Card>
-        ) : (
-          <Card sx={{ borderRadius: 0 }}>
-            <CardMedia
-              component="video"
-              src={video2}
-              muted
-              loop
-              sx={{ display: 'block', zIndex: -1 }}
-            />
-          </Card>
-        )}
+      {/* Hero Section with Animated Background */}
+      <Box
+        sx={{
+          minHeight: '100vh',
+          position: 'relative',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          bgcolor: '#121218',
+        }}
+      >
+        {/* Animated gradient background */}
+        <LottieBackground />
 
-        {/* Dark gradient overlay */}
-        <Box
+        {/* Hero content */}
+        <Container
+          maxWidth="md"
           sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'linear-gradient(to bottom, rgba(10,22,40,0.4), rgba(10,22,40,0.9))',
-            zIndex: 1,
-          }}
-        />
-
-        {/* Hero text */}
-        <Box
-          sx={{
-            position: 'absolute',
-            color: 'white',
-            top: { lg: 120, xl: 150 },
-            left: '50%',
-            transform: 'translateX(-50%)',
+            position: 'relative',
             zIndex: 2,
             textAlign: 'center',
-            animation: 'fadeInUp 1s ease-out',
-            ...fadeInUpKeyframes,
+            py: { xs: 8, md: 0 },
           }}
         >
+          {/* Main headline */}
           <Typography
             variant="h1"
             sx={{
-              fontWeight: 400,
-              fontSize: { lg: '3.5rem', xl: '4.5rem' },
-              textShadow: '0 4px 20px rgba(0,0,0,0.5)',
-            }}
-          >
-            I build wonderful experiences for the
-          </Typography>
-          <Typography
-            component="span"
-            sx={{
-              fontSize: { lg: '4rem', xl: '5rem' },
-              fontWeight: 700,
-              background: 'linear-gradient(90deg, #1760a5, #00d4ff)',
-              backgroundClip: 'text',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              display: 'block',
-              mt: 1,
-            }}
-          >
-            web
-          </Typography>
-        </Box>
-
-        {/* Portfolio button */}
-        <Box
-          sx={{
-            position: 'absolute',
-            color: 'white',
-            top: { lg: 500, xl: 600 },
-            left: '75%',
-            transform: 'translateX(-50%)',
-            zIndex: 2,
-            animation: 'fadeInUp 1s ease-out 0.3s both',
-            ...fadeInUpKeyframes,
-          }}
-        >
-          <Button
-            href="#portfolio"
-            variant="contained"
-            sx={{
-              background: 'linear-gradient(90deg, #1760a5, #00d4ff)',
-              px: 6,
-              py: 2,
-              fontSize: '1.5rem',
+              fontSize: { xs: '2.5rem', sm: '3rem', md: '4rem', lg: '4.5rem' },
               fontWeight: 600,
-              borderRadius: 2,
-              textTransform: 'none',
-              boxShadow: '0 10px 30px rgba(0, 212, 255, 0.3)',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                transform: 'translateY(-3px)',
-                boxShadow: '0 15px 40px rgba(0, 212, 255, 0.4)',
-              },
+              color: '#ffffff',
+              mb: 3,
+              animation: 'fadeInUp 1s ease-out',
+              ...fadeInUpKeyframes,
+              lineHeight: 1.2,
             }}
           >
-            View Portfolio
-          </Button>
-        </Box>
-      </Box>
+            I build {' '}
+            <Box
+              component="span"
+              sx={{
+                background: 'linear-gradient(135deg, #8b5cf6, #3b82f6)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              AI-powered full-stack applications
+            </Box>
+          </Typography>
 
-      {/* Mobile Hero - shown on smaller screens */}
-      <Box
-        sx={{
-          display: { xs: 'flex', lg: 'none' },
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          minHeight: '60vh',
-          bgcolor: '#0a1628',
-          px: 3,
-          py: 8,
-          textAlign: 'center',
-        }}
-      >
-        <Typography
-          variant="h3"
-          sx={{
-            color: 'white',
-            fontWeight: 400,
-            mb: 2,
-          }}
-        >
-          I build wonderful experiences for the
-        </Typography>
-        <Typography
-          sx={{
-            fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
-            fontWeight: 700,
-            background: 'linear-gradient(90deg, #1760a5, #00d4ff)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}
-        >
-          web
-        </Typography>
-        <Button
-          href="#portfolio"
-          variant="contained"
-          sx={{
-            mt: 4,
-            background: 'linear-gradient(90deg, #1760a5, #00d4ff)',
-            px: 4,
-            py: 1.5,
-            fontSize: '1.2rem',
-            fontWeight: 600,
-            borderRadius: 2,
-            textTransform: 'none',
-          }}
-        >
-          View Portfolio
-        </Button>
+          {/* Subtitle */}
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' },
+              color: '#9ca3af',
+              mb: 5,
+              maxWidth: '600px',
+              mx: 'auto',
+              animation: 'fadeInUp 1s ease-out 0.2s both',
+              ...fadeInUpKeyframes,
+              lineHeight: 1.7,
+            }}
+          >
+
+            Crafting seamless digital experiences with modern technologies.
+          </Typography>
+
+          {/* Glass-morphism input card */}
+          <Paper
+            elevation={0}
+            sx={{
+              background: 'rgba(26, 26, 36, 0.7)',
+              backdropFilter: 'blur(20px)',
+              border: '1px solid rgba(139, 92, 246, 0.2)',
+              borderRadius: 3,
+              p: { xs: 2, sm: 3 },
+              maxWidth: '550px',
+              mx: 'auto',
+              animation: 'fadeInUp 1s ease-out 0.4s both',
+              ...fadeInUpKeyframes,
+            }}
+          >
+            <TextField
+              fullWidth
+              placeholder="Let's build something amazing"
+              variant="outlined"
+              InputProps={{
+                readOnly: true,
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      component={HashLink}
+                      smooth
+                      to="#portfolio"
+                      edge="end"
+                      sx={{
+                        bgcolor: 'primary.main',
+                        color: 'white',
+                        width: 48,
+                        height: 48,
+                        mr: -1,
+                        borderRadius: 2,
+                        '&:hover': {
+                          bgcolor: 'primary.light',
+                        },
+                      }}
+                    >
+                      <ArrowForwardIcon />
+                    </IconButton>
+                  </InputAdornment>
+                ),
+                sx: {
+                  bgcolor: 'rgba(18, 18, 24, 0.6)',
+                  borderRadius: 2,
+                  pr: 1.5,
+                  '& .MuiOutlinedInput-notchedOutline': {
+                    borderColor: 'rgba(139, 92, 246, 0.3)',
+                  },
+                  '&:hover .MuiOutlinedInput-notchedOutline': {
+                    borderColor: 'rgba(139, 92, 246, 0.5)',
+                  },
+                  '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                    borderColor: 'primary.main',
+                  },
+                  '& input': {
+                    color: '#9ca3af',
+                    py: { xs: 2.5, md: 2 },
+                    fontSize: { xs: '1rem', md: '1.1rem' },
+                  },
+                },
+              }}
+              sx={{ mb: 2 }}
+            />
+
+            <Stack
+              direction={{ xs: 'column', sm: 'row' }}
+              spacing={2}
+              justifyContent="center"
+            >
+              <Button
+                variant="contained"
+                startIcon={<DescriptionIcon />}
+                href="https://docs.google.com/document/d/1eh-c7nNmuU6CRv5ZS2dTp5LpFqJEkoIwypHCYVvm_4I/edit?usp=sharing"
+                target="_blank"
+                sx={{
+                  background: 'linear-gradient(135deg, #8b5cf6, #7c3aed)',
+                  px: 3,
+                  py: 1.5,
+                  fontSize: '1rem',
+                  fontWeight: 600,
+                  borderRadius: 2,
+                  textTransform: 'none',
+                  boxShadow: '0 4px 20px rgba(139, 92, 246, 0.3)',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    background: 'linear-gradient(135deg, #9d6eff, #8b5cf6)',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 8px 30px rgba(139, 92, 246, 0.4)',
+                  },
+                }}
+              >
+                View Resume
+              </Button>
+
+              <Button
+                variant="outlined"
+                startIcon={<CodeIcon />}
+                component={HashLink}
+                smooth
+                to="#portfolio"
+                sx={{
+                  borderColor: 'rgba(59, 130, 246, 0.5)',
+                  color: '#3b82f6',
+                  px: 3,
+                  py: 1.5,
+                  fontSize: '1rem',
+                  fontWeight: 600,
+                  borderRadius: 2,
+                  textTransform: 'none',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    borderColor: '#3b82f6',
+                    bgcolor: 'rgba(59, 130, 246, 0.1)',
+                    transform: 'translateY(-2px)',
+                  },
+                }}
+              >
+                See Projects
+              </Button>
+            </Stack>
+          </Paper>
+        </Container>
       </Box>
 
       {/* About Section */}
       <Box
         id="about"
         sx={{
-          bgcolor: '#0a1628',
+          bgcolor: '#121218',
           pt: 10,
           pb: 8,
           position: 'relative',
@@ -263,7 +288,7 @@ export default function Home() {
             left: 0,
             right: 0,
             height: '2px',
-            background: 'linear-gradient(90deg, transparent, #1760a5, #00d4ff, #1760a5, transparent)',
+            background: 'linear-gradient(90deg, transparent, #8b5cf6, #3b82f6, #8b5cf6, transparent)',
           },
         }}
       >
@@ -275,6 +300,7 @@ export default function Home() {
               color: '#ffffff',
               fontWeight: 600,
               mb: 3,
+              fontSize: { xs: '2rem', md: '2.5rem' },
             }}
             gutterBottom
           >
@@ -283,7 +309,11 @@ export default function Home() {
           <Typography
             variant="h5"
             align="center"
-            sx={{ color: '#94a3b8' }}
+            sx={{
+              color: '#9ca3af',
+              fontSize: { xs: '1rem', md: '1.25rem' },
+              lineHeight: 1.8,
+            }}
             paragraph
           >
             I am a software developer with 6 years professional experience. I am
@@ -294,161 +324,184 @@ export default function Home() {
       </Box>
 
       {/* Projects Section */}
-      <Container sx={{ py: 8, bgcolor: '#0a1628' }} maxWidth="lg" id="portfolio">
+      <Container sx={{ py: 8, bgcolor: '#121218' }} maxWidth="lg" id="portfolio">
         <Typography
           align="center"
           variant="h3"
           sx={{
             mb: 6,
-            background: 'linear-gradient(90deg, #ffffff, #00d4ff)',
+            background: 'linear-gradient(135deg, #ffffff, #8b5cf6)',
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             fontWeight: 600,
+            fontSize: { xs: '1.75rem', md: '2.5rem' },
           }}
         >
           Software Applications
         </Typography>
 
-        <Grid container spacing={4}>
+        <Stack spacing={8}>
           {projects.map((project, index) => (
-            <Grid item xs={12} sm={12} md={6} lg={4} key={index}>
-              <Card
+            <Card
+              key={index}
+              sx={{
+                display: 'flex',
+                flexDirection: { xs: 'column', md: 'row' },
+                bgcolor: 'rgba(26, 26, 36, 0.4)',
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgba(139, 92, 246, 0.1)',
+                borderRadius: 4,
+                overflow: 'hidden',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                cursor: 'pointer',
+                '&:hover': {
+                  transform: 'translateY(-5px)',
+                  boxShadow: '0 20px 40px -5px rgba(0,0,0,0.4)',
+                  border: '1px solid rgba(139, 92, 246, 0.3)',
+                },
+              }}
+              onClick={() => handleViewProject(project)}
+            >
+              {/* Image Section */}
+              <Box
                 sx={{
+                  width: { xs: '100%', md: '50%' },
+                  minHeight: { xs: 240, md: 400 },
                   position: 'relative',
-                  height: 400,
                   overflow: 'hidden',
-                  bgcolor: '#0f2744',
-                  border: '1px solid rgba(23, 96, 165, 0.2)',
-                  borderRadius: 3,
-                  transition: 'all 0.4s ease',
-                  cursor: 'pointer',
-                  '&:hover': {
-                    transform: 'translateY(-8px)',
-                    boxShadow: '0 20px 40px rgba(0, 212, 255, 0.15)',
-                    border: '1px solid rgba(0, 212, 255, 0.4)',
-                  },
-                  '&:hover .card-overlay': {
-                    opacity: 1,
-                  },
-                  '&:hover .card-image': {
-                    transform: 'scale(1.1)',
-                  },
                 }}
-                onClick={() => handleViewProject(project)}
               >
-                {/* Full-bleed image */}
                 <CardMedia
-                  className="card-image"
                   component="img"
                   image={project.image}
                   alt={project.title}
                   sx={{
+                    width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    transition: 'transform 0.6s ease',
+                    transition: 'transform 0.7s ease',
+                    '.MuiCard-root:hover &': {
+                      transform: 'scale(1.05)',
+                    },
                   }}
                 />
 
-                {/* Always visible title at bottom */}
+                {/* Overlay Gradients */}
                 <Box
                   sx={{
                     position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    p: 3,
-                    background: 'linear-gradient(to top, rgba(10,22,40,0.95), transparent)',
+                    inset: 0,
+                    background: 'linear-gradient(90deg, transparent 60%, rgba(26, 26, 36, 0.9) 100%)',
+                    display: { xs: 'none', md: 'block' }
                   }}
-                >
-                  <Typography variant="h5" fontWeight={600} color="white">
-                    {project.title}
-                  </Typography>
-                </Box>
-
-                {/* Hover overlay with full content */}
+                />
                 <Box
-                  className="card-overlay"
                   sx={{
                     position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    height: '100%',
-                    background:
-                      'linear-gradient(to top, rgba(10,22,40,0.98) 0%, rgba(10,22,40,0.85) 50%, rgba(10,22,40,0.4) 100%)',
-                    opacity: 0,
-                    transition: 'opacity 0.4s ease',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'flex-end',
-                    p: 3,
+                    inset: 0,
+                    background: 'linear-gradient(0deg, rgba(26, 26, 36, 0.95) 0%, transparent 60%)',
+                    display: { xs: 'block', md: 'none' }
+                  }}
+                />
+              </Box>
+
+              {/* Content Section */}
+              <Box
+                sx={{
+                  flex: 1,
+                  p: { xs: 3, md: 6 },
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  position: 'relative',
+                  zIndex: 1,
+                }}
+              >
+                <Typography
+                  variant="h3"
+                  sx={{
+                    fontSize: { xs: '1.75rem', md: '2.5rem' },
+                    fontWeight: 700,
+                    color: '#fff',
+                    mb: 3,
+                    background: 'linear-gradient(135deg, #fff, #a78bfa)',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
                   }}
                 >
-                  <Typography variant="h5" fontWeight={600} color="white" mb={2}>
-                    {project.title}
-                  </Typography>
+                  {project.title}
+                </Typography>
 
-                  {/* Tech tags as pills */}
-                  <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap sx={{ mb: 2 }}>
-                    {project.tech.map((tech, techIndex) => (
-                      <Chip
-                        key={techIndex}
-                        label={tech}
-                        size="small"
-                        sx={{
-                          bgcolor: 'rgba(0, 212, 255, 0.1)',
-                          border: '1px solid rgba(0, 212, 255, 0.4)',
-                          color: '#00d4ff',
-                          fontWeight: 500,
-                          mb: 1,
-                        }}
-                      />
-                    ))}
-                  </Stack>
+                <Stack direction="row" flexWrap="wrap" gap={1.5} mb={5}>
+                  {project.tech.map((tech, techIndex) => (
+                    <Chip
+                      key={techIndex}
+                      label={tech}
+                      sx={{
+                        bgcolor: 'rgba(139, 92, 246, 0.1)',
+                        border: '1px solid rgba(139, 92, 246, 0.2)',
+                        color: '#a78bfa',
+                        fontSize: '0.9rem',
+                        fontWeight: 500,
+                        px: 1,
+                      }}
+                    />
+                  ))}
+                </Stack>
 
-                  {/* Action buttons */}
-                  <Stack direction="row" spacing={2} alignItems="center">
-                    <Button
-                      variant="contained"
-                      startIcon={<OpenInNewIcon />}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleViewProject(project);
-                      }}
-                      sx={{
-                        background: 'linear-gradient(90deg, #1760a5, #00d4ff)',
-                        textTransform: 'none',
-                        fontWeight: 600,
-                        px: 3,
-                        '&:hover': {
-                          background: 'linear-gradient(90deg, #1a6fc2, #00e5ff)',
-                        },
-                      }}
-                    >
-                      View Project
-                    </Button>
-                    <IconButton
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        window.open(project.githubUrl, '_blank');
-                      }}
-                      sx={{
-                        color: '#00d4ff',
-                        border: '1px solid rgba(0, 212, 255, 0.4)',
-                        '&:hover': {
-                          bgcolor: 'rgba(0, 212, 255, 0.1)',
-                        },
-                      }}
-                    >
-                      <GitHubIcon />
-                    </IconButton>
-                  </Stack>
-                </Box>
-              </Card>
-            </Grid>
+                <Stack direction="row" spacing={2} alignItems="center">
+                  <Button
+                    variant="contained"
+                    startIcon={<OpenInNewIcon />}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleViewProject(project);
+                    }}
+                    sx={{
+                      background: 'linear-gradient(135deg, #8b5cf6, #7c3aed)',
+                      px: 4,
+                      py: 1.5,
+                      borderRadius: 3,
+                      textTransform: 'none',
+                      fontSize: '1rem',
+                      fontWeight: 600,
+                      boxShadow: '0 4px 20px rgba(139, 92, 246, 0.3)',
+                      '&:hover': {
+                        background: 'linear-gradient(135deg, #9d6eff, #8b5cf6)',
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 8px 25px rgba(139, 92, 246, 0.4)',
+                      }
+                    }}
+                  >
+                    View Project
+                  </Button>
+
+                  <IconButton
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open(project.githubUrl, '_blank');
+                    }}
+                    sx={{
+                      color: '#9ca3af',
+                      border: '1px solid rgba(139, 92, 246, 0.2)',
+                      p: 1.5,
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        color: '#fff',
+                        borderColor: '#a78bfa',
+                        bgcolor: 'rgba(139, 92, 246, 0.1)'
+                      }
+                    }}
+                  >
+                    <GitHubIcon />
+                  </IconButton>
+                </Stack>
+              </Box>
+            </Card>
           ))}
-        </Grid>
+        </Stack>
       </Container>
     </>
   );

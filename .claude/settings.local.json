@@ -3,7 +3,13 @@
     "allow": [
       "Skill(frontend-design)",
       "mcp__context7__resolve-library-id",
-      "Bash(npm start)"
+      "Bash(npm start)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_close",
+      "Bash(npm install:*)",
+      "Bash(start brave http://localhost:3000)"
     ]
   }
 }

@@ -57,7 +57,3 @@ src/
 - Components use MUI's `sx` prop for responsive styling with breakpoints (xs, sm, md, lg)
 - CartContext wraps the entire Router for global cart state access
 - Hash links (`/#about`, `/#portfolio`) for single-page navigation with smooth scrolling
-
-## Context7 MCP
-
-Always use Context7 MCP when I need library/API documentation, code generation, setup or configuration steps without me having to explicitly ask. When I ask you documentation about Claude Code use the library id: `/anthropics/claude-code`

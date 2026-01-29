@@ -8,9 +8,9 @@ function Navbar(props) {
     <AppBar
       position="sticky"
       sx={{
-        background: 'rgba(10, 22, 40, 0.8)',
+        background: 'rgba(18, 18, 24, 0.85)',
         backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid rgba(23, 96, 165, 0.3)',
+        borderBottom: '1px solid rgba(139, 92, 246, 0.2)',
         boxShadow: 'none',
       }}
     >
@@ -21,10 +21,10 @@ function Navbar(props) {
               fontSize: 40,
               mr: 2,
               mt: 1,
-              color: '#00d4ff',
+              color: '#8b5cf6',
               transition: 'all 0.3s ease',
               '&:hover': {
-                color: '#ffffff',
+                color: '#a78bfa',
               },
             }}
           />
@@ -32,7 +32,7 @@ function Navbar(props) {
 
         <Box width="100%">
           <Stack gap={5} flexDirection="row" justifyContent="flex-end">
-            <ButtonGroup sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+            <Stack direction="row" spacing={3} alignItems="center">
               <Button
                 target="_blank"
                 href="https://docs.google.com/document/d/1eh-c7nNmuU6CRv5ZS2dTp5LpFqJEkoIwypHCYVvm_4I/edit?usp=sharing"
@@ -42,6 +42,8 @@ function Navbar(props) {
                   fontWeight: 500,
                   letterSpacing: 1,
                   position: 'relative',
+                  padding: '6px 16px',
+                  minWidth: 'auto',
                   '&::after': {
                     content: '""',
                     position: 'absolute',
@@ -49,7 +51,7 @@ function Navbar(props) {
                     left: '50%',
                     width: 0,
                     height: '2px',
-                    background: 'linear-gradient(90deg, #1760a5, #00d4ff)',
+                    background: 'linear-gradient(90deg, #8b5cf6, #3b82f6)',
                     transition: 'all 0.3s ease',
                     transform: 'translateX(-50%)',
                   },
@@ -79,7 +81,7 @@ function Navbar(props) {
               >
                 ABOUT
               </StyledHashButton>
-            </ButtonGroup>
+            </Stack>
           </Stack>
         </Box>
       </Toolbar>
