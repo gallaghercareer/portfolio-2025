@@ -35,7 +35,7 @@ function Navbar(props) {
             <Stack direction="row" spacing={3} alignItems="center">
               <Button
                 target="_blank"
-                href="https://docs.google.com/document/d/1eh-c7nNmuU6CRv5ZS2dTp5LpFqJEkoIwypHCYVvm_4I/edit?usp=sharing"
+                href="https://docs.google.com/document/d/1EIx1xUEhOdL0sgA5Da6kjoDSvLlcMs2kod-TdIx6xzk/edit?usp=sharing"
                 sx={{
                   color: '#ffffff',
                   fontSize: 18,

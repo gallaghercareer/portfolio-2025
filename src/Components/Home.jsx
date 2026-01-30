@@ -30,7 +30,7 @@ const projects = [
   {
     title: 'Recipe Maker App',
     image: cardImage_Shoppingcart,
-    tech: ['React', 'TypeScript', 'Azure Functions', 'NoSQL'],
+    tech: ['Azure', 'OAuth/OIDC', 'React', 'TypeScript', 'Azure Functions', 'NoSQL Table Storage'],
     viewUrl: 'https://icy-dune-0439bf00f.6.azurestaticapps.net/',
     githubUrl: 'https://github.com/gallaghercareer/recipemaker-ts',
     isExternal: true,
@@ -38,7 +38,7 @@ const projects = [
   {
     title: 'C#/.NET Ticketing App',
     image: cardImage_Bullseye,
-    tech: ['ASP.NET MVC', 'Azure SQL', 'Identity'],
+    tech: ['ASP.NET MVC', 'REST Api', 'Azure SQL Database', 'Identity framework', 'Entity Framework', 'RBAC'],
     viewUrl: 'https://bugtracker-e2ecatdjfhaqbccz.canadacentral-01.azurewebsites.net/',
     githubUrl: 'https://github.com/gallaghercareer/BugTracker2025',
     isExternal: true,
