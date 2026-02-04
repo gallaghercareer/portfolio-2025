@@ -126,7 +126,7 @@ export default function Home() {
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              AI-powered full-stack applications
+              full-stack applications
             </Box>
           </Typography>
 
