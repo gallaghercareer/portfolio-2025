@@ -28,6 +28,14 @@ import LottieBackground from './LottieBackground';
 // Project data for cleaner card rendering
 const projects = [
   {
+    title: 'Health App',
+    image: cardImage_Sun,
+    tech: ['React', 'Azure Entra ID', '.NET REST Api', 'Microsoft SQL Server'],
+    viewUrl: 'https://healthapp.gallaghercareer.com',
+    githubUrl: 'https://github.com/gallaghercareer/HealthApp',
+    isExternal: true,
+  },
+  {
     title: 'Recipe Maker App',
     image: cardImage_Shoppingcart,
     tech: ['Azure', 'OAuth/OIDC', 'React', 'TypeScript', 'Azure Functions', 'NoSQL Table Storage'],
@@ -39,8 +47,8 @@ const projects = [
     title: 'C#/.NET Ticketing App',
     image: cardImage_Bullseye,
     tech: ['ASP.NET MVC', 'REST Api', 'Azure SQL Database', 'Identity framework', 'Entity Framework', 'RBAC'],
-    viewUrl: 'https://bugtracker-e2ecatdjfhaqbccz.canadacentral-01.azurewebsites.net/',
-    githubUrl: 'https://github.com/gallaghercareer/BugTracker2025',
+    viewUrl: 'https://bugtracker.gallaghercareer.com',
+    githubUrl: 'https://github.com/gallaghercareer/2025-NETMVC-App',
     isExternal: true,
   },
   /*
